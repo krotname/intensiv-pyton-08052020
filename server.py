@@ -55,7 +55,7 @@ class ClientProtocol(asyncio.Protocol):
 
     def send_history(self):
         historym = ("история сообщений: ")
-        history = ' '.join(self.server.history)
+        history = ' '.join(self.server.history[-11:-1])
         for client in self.server.clients:
             if client.login == self.login:
 
